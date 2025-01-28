@@ -15,8 +15,9 @@ public class DatabaseService(string connectionString) : IDatabaseService
     /// <summary>
     /// Get all hotels from the database.
     /// </summary>
-    [KernelFunction]
-    [Description("Get all hotels.")]    public async Task<IEnumerable<Hotel>> GetHotels()
+     [KernelFunction("get_hotels")]
+    [Description("Get all hotels.")]    
+    public async Task<IEnumerable<Hotel>> GetHotels()
     {
         var sql = "SELECT HotelID, HotelName, City, Country FROM dbo.Hotel";
         using var conn = new SqlConnection(
