@@ -51,7 +51,7 @@ def main():
                    query_vector = handle_query_vectorization(query)
                    vector_search_results = handle_vector_search(query_vector, max_results, minimum_similarity_score)
                    st.write("## Results")
-                   st.table(vector_search_results.text)
+                   st.table(vector_search_results.json)
                 
             else:
                 st.warning("Please enter a query.")
